@@ -25,12 +25,12 @@ JOIN country
    
 -- 3 Revenue per store
 SELECT
-	customer.store_id,
+	staff.store_id,
     SUM(payment.amount) AS revenue
-FROM customer
+FROM staff
 JOIN payment
-	ON customer.customer_id = payment.customer_id
-GROUP BY customer.store_id;
+	ON staff.staff_id = payment.staff_id
+GROUP BY staff.store_id;
     
 -- 4 AVG running time of fils 4 each cat
 
