@@ -2,10 +2,12 @@ USE Sakila
 
 -- 1 films per category
 SELECT 
-	category_id,
-    COUNT(film_id) AS number_of_films
+	category.name,
+    COUNT(film_category.film_id) AS number_of_films
 FROM  film_category
-GROUP BY category_id;
+JOIN category
+	ON film_category.category_id = category.category_id
+GROUP BY category.name;
 
 -- 2 STORE location
 SELECT
